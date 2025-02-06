@@ -1,0 +1,21 @@
+Base URL: http://localhost:8000
+--------------------------------------------------------------------------------------------
+/api/auth/register
+body: name, email, password
+validation: name: required, email:required, password: required| at least 8 characters
+response: {
+	message: "Email Verification sent",
+	data: user(Obj)
+}
+
+--------------------------------------------------------------------------------------------
+
+/api/auth/login
+body: email, password
+validation: email: required, password:required
+response: {
+	message: "Login successfully",
+        data: user(Obj),
+        token: token
+}
+
